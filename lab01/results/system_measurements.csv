@@ -1,0 +1,3 @@
+Model Name,Parameters,Accuracy,F1-Score,ROC-AUC,Train Latency (ms),Inference Latency (ms/sample),Storage Footprint (bytes),Target Deployment Tier
+Logistic Regression (L2 Bound),31,0.924,0.9395,0.9847,106.38,0.1401,1103,TinyML / Ultra-Low-Power Edge
+Constrained Decision Tree (depth=5),33,0.924,0.9401,0.9141,4.92,0.1124,3929,Microcontroller / Mobile Edge
