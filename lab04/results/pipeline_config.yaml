@@ -1,0 +1,21 @@
+pipeline_config:
+  author: Umud Kalbizada
+  student_id: 72995
+  seed: 72995
+data_hashes:
+  train_sha256: d85c0ad60168543f048ee197efdbaef3053ba65390f3914a72c3644d5c409cf6
+  test_sha256: 7a5bfd8309a7d046bcc82814d1be76855de82f6e5f7d9a38ceef18a8f7031f60
+evaluation:
+  base_model:
+    accuracy: 0.8539
+    f1: 0.6624
+    precision: 0.7407
+    recall: 0.599
+  derived_features_model:
+    accuracy: 0.8566
+    f1: 0.6703
+    precision: 0.745
+    recall: 0.6092
+  delta:
+    accuracy_gain: 0.0027
+    f1_gain: 0.0079
