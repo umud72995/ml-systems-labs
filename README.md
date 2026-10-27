@@ -1,47 +1,26 @@
-# Machine Learning Systems Laboratory Portfolio
+# Applied Machine Learning Systems: Computational Cost & Model Architecture
 
-**Student Researcher:** Umud Kalbizada  
+**Student:** Umud Kalbizada  
 **Student ID:** 72995  
-**Institution:** Vistula University  
-**Academic Year:** 2025/2026  
-**Primary Reference:** *Machine Learning Systems* (Vijay Janapa Reddi, Harvard University)  
+**Institution:** Vistula University (2025/2026)  
+**Domain:** Systems-Aware Machine Learning & TinyML Deployment  
 
 ---
 
-## Portfolio Architecture and Navigation
+## Repository Roadmap
 
-This repository implements the unified coursework curriculum for Machine Learning Systems, structured across four modular laboratory investigations adhering to strict reproducible production standards:
+This portfolio implements four structured investigations in systems-aware machine learning:
 
-```
-ml-systems-labs/
-├── README.md               # Repository overview, roadmap, and environment specs
-├── requirements.txt        # Strictly pinned dependency manifest
-├── .gitignore              # Production-grade cache and artifact exclusions
-├── lab01/                  # Lab 01: Systems Profiling & Environment Setup
-│   ├── report.md           # Systems measurement audit & deployment tier classification
-│   ├── src/                # Benchmark harness and performance instrumentation
-│   └── results/            # Profiling CSVs, model binaries, and system telemetry
-├── lab02/                  # Lab 02: Modular Neural Network from First Principles
-│   ├── report.md           # Analytical calculus, finite-difference verification, training curves
-│   ├── src/                # Vectorized NumPy tensor network and backpropagation engine
-│   └── results/            # Multi-parameter convergence logs, loss plots, timing metrics
-├── lab03/                  # Lab 03: Architectural Topologies and Execution Budgets
-│   ├── report.md           # MLP vs CNN vs Attention trade-offs, theoretical FLOPs vs MACs
-│   ├── src/                # PyTorch architecture declarations and benchmarking scripts
-│   └── results/            # Pareto frontier plots, latency traces, parameter tables
-└── lab04/                  # Lab 04: Industrial Data Engineering & Quality Pipeline
-    ├── report.md           # Zero-leakage ETL validation, feature synthesis, label noise audit
-    ├── src/                # Production pipeline orchestrator and transformation modules
-    └── results/            # Data card, validation telemetry, serialized joblib artifacts
-```
+- **`lab01/` Systems Profiling & Environment Setup:** Baseline classification benchmarks on the Breast Cancer dataset with single-sample latency probes, memory telemetry, and TinyML hardware feasibility.
+- **`lab02/` Modular Neural Network from Scratch:** Fully vectorized multi-layer perceptron written from scratch in NumPy with centered numerical gradient validation ($\pm 10^{-5}$) and 50-epoch loss convergence plots.
+- **`lab03/` Architectural Topologies & Execution Budgets:** Profiling MLP, CNN, and Patch Vision Transformer on Fashion-MNIST across FLOPs, MACs, inference latency ($b=1$ and $b=128$), and classification accuracy.
+- **`lab04/` Industrial Data Engineering Pipeline:** Leakage-free ETL transformation, zero-drop data contracts, duplicate label conflict auditing, and engineered feature benchmarking.
 
-## Environment Reproducibility
+## Systems Performance Summary
 
-```bash
-# 1. Environment initialization
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# 2. Dependency installation
-pip install -r requirements.txt
-```
+| Investigation | Architecture | Model Footprint | Latency / Metric | Key Insight |
+| :--- | :--- | :--- | :--- | :--- |
+| **Lab 01** | Logistic Regression | 31 params (~1.08 KB) | 0.033 ms / query | Deployable on low-power ARM Cortex-M |
+| **Lab 02** | NumPy MLP | W in [32, 64] | 2.1x backward/forward ratio | Double GEMM workload confirms systems theory |
+| **Lab 03** | Dual-Stage CNN | 20,490 params | 89.88% test accuracy | Weight sharing achieves highest parameter efficiency |
+| **Lab 04** | Leakage-Free ETL | Adult Census | +0.41% accuracy gain | Domain feature synthesis expands linear boundary |
